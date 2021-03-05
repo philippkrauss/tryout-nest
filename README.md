@@ -43,15 +43,26 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](LICENSE).
 
 ## open questions
+* configuration
+* testing
+
+## closed questions
 * how to implement common checks / code-reuse
+  * validators, transformations, pipes, guards
 * logging, requestId logging
+  * middlewares, request scope
 * extensibility, plugins
+  * express plugins work
 * authentication
+  * guards
 * body parsing / validation
+  * validators, transformations, pipes
 * error handling
+  * filter
 * rendering
+  * objects are auto-converted to json
 * request headers
   * use of underlying express request
+  * @Headers decorator
 * response headers
-  * use of express response
-* configuration
+  * use of express response with passThrough flag

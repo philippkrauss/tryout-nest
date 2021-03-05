@@ -14,17 +14,20 @@ import {
   Query,
   DefaultValuePipe,
   ParseBoolPipe,
+  UseGuards,
 } from '@nestjs/common';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './cats.service';
-import { Cat } from './interfaces/cat.interface';
-import { HttpExceptionFilter } from '../common/http-exception.filter';
+import {RolesGuard} from "../common/roles.guard";
+import {Roles} from "../common/roles.decorator";
 
 @Controller('cats')
+@UseGuards(RolesGuard)
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
   @Post()
+  @Roles('admin')
   async create(@Body(ValidationPipe) createCatDto: CreateCatDto) {
     this.catsService.create({
       age: createCatDto.age,

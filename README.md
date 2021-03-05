@@ -54,3 +54,4 @@ Nest is [MIT licensed](LICENSE).
   * use of underlying express request
 * response headers
   * use of express response
+* configuration
